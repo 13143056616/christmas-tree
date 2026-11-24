@@ -79,7 +79,7 @@ GitHub Pages 的做法：新建仓库 → 把这个目录整个传上去（**除
 | `index.html` | 新标题、去掉 Google Fonts 外链（改本地字体，国内不再卡首屏）、补 SEO/主题色 |
 | `fonts/` | 新增，Playfair Display 两个 woff2（约 76KB），大标题的斜体衬线靠它 |
 | `custom.config.js` | 新增，收件人/落款/祝福语/照片的统一配置入口 |
-| `assets/index-CZPyPNXc.js` | 三处字符串改为读配置（主标题、开场祝福语、内置相册数组），其余逻辑一行未动 |
+| `assets/index-CZPyPNXc.js` | 四处改动：三处字符串改为读配置（主标题、开场祝福语、内置相册数组）、相机距离按屏幕比例自适应（竖屏拉远并抬高，避免树被裁切）；其余逻辑一行未动 |
 | `start.bat` / `start.sh` | 新增，一键起本地服务 |
 | `assets/index-CZPyPNXc.js.orig` | 原始打包文件备份，想完全还原就把 `.orig` 后缀去掉覆盖回去 |
 

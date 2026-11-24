@@ -51,7 +51,30 @@
         0% { background-position: 0% 0%; }
         100% { background-position: 0% 200%; }
       }
+
+      /* ---------- 手机竖屏适配 ---------- */
+      /* 顶部文案原本是 55% 白，压在金色粒子上几乎看不清，给它一点底气 */
+      #root p[class*="tracking-[0.3em]"] {
+        color: #ffe4b0 !important;
+        text-shadow: 0 1px 3px #070b18, 0 0 10px rgba(7, 11, 24, 0.95), 0 0 22px rgba(7, 11, 24, 0.8) !important;
+      }
+      /* 窄屏下按钮文字别被挤成两行 */
+      #root button { white-space: nowrap; }
+      @media (max-aspect-ratio: 1/1) {
+        /* 窄屏才放开固定宽度，桌面保持原样 */
+        #root div[class*="backdrop-blur-md"][class*="rounded-xl"] {
+          width: auto !important;
+        }
+        #root div[class*="backdrop-blur-md"] span { white-space: nowrap; }
+      }
     </style>
+
+    <script>
+      // 横竖屏切换后重新构图（相机距离是初始化时算的）
+      window.addEventListener('orientationchange', function () {
+        setTimeout(function () { location.reload(); }, 250);
+      });
+    </script>
 
     <!-- 定制配置：想改的名字、祝福语、照片都在这个文件里 -->
     <script src="./custom.config.js"></script>
