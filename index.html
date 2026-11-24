@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#070b18" />
+    <title>圣诞快乐 · 来自神仙陈的礼物</title>
+    <meta name="description" content="一棵会回应你手势的粒子圣诞树。握拳成树，摊手散开，捏指翻出照片。" />
+
+    <!-- 字体本地化：不再依赖 fonts.googleapis.com，国内也能秒开 -->
+    <link rel="preload" href="./fonts/playfair-italic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./fonts/playfair-normal.woff2" as="font" type="font/woff2" crossorigin />
+
+    <style>
+      @font-face {
+        font-family: 'Playfair Display';
+        font-style: italic;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url('./fonts/playfair-italic.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Playfair Display';
+        font-style: normal;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url('./fonts/playfair-normal.woff2') format('woff2');
+      }
+
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #070b18;
+        font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'STSong', 'SimSun', 'Playfair Display', serif;
+      }
+      canvas {
+        touch-action: none;
+      }
+      .font-display {
+        font-family: 'Playfair Display', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'STSong', serif;
+      }
+      .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+      .custom-scrollbar::-webkit-scrollbar-track { background: rgba(255,255,255,0.03); }
+      .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255,217,138,0.35); border-radius: 2px; }
+      @keyframes shimmer {
+        0%, 100% { opacity: 0.55; }
+        50% { opacity: 1; }
+      }
+      .shimmer { animation: shimmer 3s ease-in-out infinite; }
+      @keyframes snowfall-gradient {
+        0% { background-position: 0% 0%; }
+        100% { background-position: 0% 200%; }
+      }
+    </style>
+
+    <!-- 定制配置：想改的名字、祝福语、照片都在这个文件里 -->
+    <script src="./custom.config.js"></script>
+    <script type="module" crossorigin src="./assets/index-CZPyPNXc.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BeE7YxDE.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <div style="color:#ffd98a;font-family:serif;padding:40px;line-height:1.9">
+        这棵树需要 JavaScript 才能亮起来。<br />请换一个现代浏览器（Chrome / Edge / Safari）打开。
+      </div>
+    </noscript>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+把要送的照片放这个目录，建议 3:4 竖图或 1:1 方图，单张 500KB 以内。
+放好后打开上一层的 custom.config.js，把路径写进 photos 那行：
+
+var photos = ["./photos/01.jpg", "./photos/02.jpg"];
+
+保存后刷新页面即可。
