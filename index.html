@@ -74,6 +74,23 @@
       window.addEventListener('orientationchange', function () {
         setTimeout(function () { location.reload(); }, 250);
       });
+
+      // 排查手势用：网址后加 ?debug=1 会在左下角显示识别引擎的实时计数
+      if (new URLSearchParams(location.search).has('debug')) {
+        var dlgBox = null;
+        setInterval(function () {
+          var d = window.__gestureDiag;
+          if (!d) return;
+          if (!dlgBox) {
+            dlgBox = document.createElement('div');
+            dlgBox.style.cssText = 'position:fixed;left:8px;bottom:8px;z-index:99999;background:rgba(0,0,0,.8);color:#ffd98a;font:11px monospace;padding:7px 10px;border-radius:6px;pointer-events:none;white-space:pre;line-height:1.6;max-width:80vw;word-break:break-all';
+            document.body.appendChild(dlgBox);
+          }
+          dlgBox.textContent = '帧 ' + d.frames + ' | 结果 ' + d.results +
+            ' | 无手 ' + d.noHand + ' | 发送失败 ' + d.sendErrors +
+            (d.lastError ? '\n' + d.lastError : '');
+        }, 500);
+      }
     </script>
 
     <!-- 定制配置：想改的名字、祝福语、照片都在这个文件里 -->
